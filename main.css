@@ -62,7 +62,6 @@ header .inner-header .logo{
 header .inner-header .logo img{
     width: 100%;
     vertical-align:middle;
-
     opacity: 0.9;
 }
 
@@ -397,9 +396,15 @@ section.me ul.list > li .more{
 }
 section.me ul.list > li .more span{
 color: #ff8342;
-margin-left: 3px;
+margin-left: 7px;
 font-size: 14px;
 }
+
+section.me ul.list > li .more:hover span i{
+    /* animation: size-up 1s alternate both; */
+    animation: undefined-easeInBounce 1s  alternate both;
+}
+
 
 section.me ul.list ul.in {
     margin-bottom: 30px;
@@ -439,8 +444,10 @@ section.me ul.list ul.in li p::before{
 }
 /* section.me style end... */
 
-/* section.sns style !!!!!!!!!!!!!!!!!*/
 
+
+
+/* section.sns style !!!!!!!!!!!!!!!!!*/
 section.sns ul.sub-container{
     margin: 50px auto;
     /* background-color: #cacaca; */
@@ -452,17 +459,23 @@ section.sns ul.sub-container li{
     box-sizing: border-box;
     margin-right: 2%;
 }
-section.sns ul.sub-container li:nth-child(3){
+section.sns ul.sub-container li:last-child{
     margin-right: 0;
 }
 
 section.sns ul.sub-container li a .img-box img{
     width: 100%;
+    margin: 0 auto;
+    position: absolute;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 }
 section.sns ul.sub-container li a .img-box{
-    overflow: hidden;
-    height: 150px;
+    height: 170px;
     position: relative;
+    overflow: hidden;
     transition: 0.5s;
 }
 
@@ -479,61 +492,490 @@ section.sns ul.sub-container li a .img-box::before{
     left: 0;
     transition: 0.5s;
     opacity: 0.8;
+    z-index: 10;
 }
 
 section.sns ul.sub-container li a:hover .img-box::before{
     width: 100%;
 }
 
+
+
+
 section.sns ul.sub-container li a .img-box::after{
-    opacity: 0;
+    content: 'BLOG';
+    font-size: 9px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 3px 20px;
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    content: 'BLOG';
-    font-size: 9px;
-    color: white;
-    padding: 3px 20px;
-    border: 1px solid white;
-    border-radius: 50px;
+    
     transition: 0.5s;
-    transition-property: inherit;
+    z-index: 20;
+    opacity: 0;
 }
 
 section.sns ul.sub-container li a:hover .img-box::after{
     opacity: 1;
 }
 
-section.sns ul.sub-container li a:hover .img-box::after{
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    /* background-color: #ff8342; */
-}
-
-
-
-
 
 section.sns ul.sub-container li a .bottom{
-    padding: 10px;
+    padding: 20px 0 20px 15px;
+    box-sizing: border-box;
+}
+
+section.sns ul.sub-container li a .bottom p{
+    font-size: 13px;
 }
 
 section.sns ul.sub-container li a .bottom p.color{
     color: #ff8342;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
-section.sns ul.sub-container li a .bottom p{
-    font-size: 13px;
-    /* text-align: justify; */
-}
+
 section.sns ul.sub-container li a .bottom p.time{
     color: #868686;
     margin-top: 15px;
     font-size: 10px;
 }
+
+section.sns ul.sub-container li a .bottom p.time i{
+    margin-right: 6px ;
+    font-size: 0.9em;
+}
+
+section.sns ul.sub-container li a .bottom p.time span{
+    margin-left: 3px ;
+}
+
+
+@keyframes undefined-easeInBounce {
+	0% {	transform: translateX(0%);} 
+	4% {	transform: translateX(1.54%);}
+	8% {	transform: translateX(0.66%);}
+	18% {	transform: translateX(6.25%);}
+	26% {	transform: translateX(1.63%);}
+	46% {	transform: translateX(24.98%);}
+	64% {	transform: translateX(1.99%);}
+	76% {	transform: translateX(56.44%);}
+	88% {	transform: translateX(89.11%);}
+	100% {transform: translateX(100%);}
+}
+@keyframes size-up {
+    from{
+        transform: scale(1.0);
+    } to{
+        transform: scale(2.5);
+    }
+}
+
+
+
+
+
+/* !!!!!!!!!!!!!!! footer style */
+footer{ 
+    border-top: 1px solid #999;
+    padding: 30px 0;
+}
+
+footer .inner{
+    width: 84%;
+    margin: 0 auto;
+}
+
+footer .inner .ft-logo{
+    float: left;
+    width: 12%;
+}
+
+footer .inner .ft-logo img{
+    width: 100%;
+}
+
+footer .inner .address{
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+footer .inner .address li:first-child{
+    font-weight: 700px;
+    margin-bottom: 7px;
+}
+footer .inner .address li:last-child{
+    color: #999;
+}
+
+footer .inner ul.list {
+    /* 메뉴모음을 우측으로 */
+    float: right;
+    margin-top: 20px;
+}
+footer .inner ul.list li{
+    /* 메뉴들을 좌측부터 순서대로 정렬 */
+    float: left;
+    margin-left: 80px;
+}
+
+/* FAMILY SITE만 굵음 처리 */
+footer .inner ul.list li:last-child{ 
+    font-weight: 700;
+}
+
+/* 마우스 대면 밑줄+오렌지컬러 */
+footer .inner ul.list li a:hover{ 
+    color: #ff8342;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* 반응형 웹디자인 */
+/* 노트북 해상도 1600px 미만 */
+@media screen and (max-width: 1599px){
+   header .inner-header nav {
+    display: none;
+   }
+   header .inner-header .gnb-mobile{
+    display: block;
+    float: right;
+    font-size: 40px;
+    color: #fff;
+   }
+   section.main .main-title h2 {
+    font-size: 35px;
+}
+section.main .main-title p {
+    font-size: 18px;
+}
+section.main .main-title .view {
+    font-size: 13px;
+    width: 130px;
+    padding: 10px;
+}
+section.innovation .img-box .inner .bottom p {
+    width: 60%;
+}
+section.innovation .img-box .inner .bottom a {
+    padding: 8px 27px;
+    margin-top: 20px;
+}
+
+/* footer .inner .list{
+    display: block;
+} */
+
+footer .inner .ft-logo img{
+    width: 30%;
+    margin: 0 auto;
+    }
+}
+
+/* 태블릿 1024px 이하 해상도 (아이패드 프로) */
+@media screen and (max-width: 1024px){
+
+    header .inner-header, section .sub-container, footer .inner{
+        width: 92%;
+    }
+
+    section.about ul li a .text p {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    section.me {
+        background: url(./img/me.jpg) no-repeat center / cover;
+        padding: 80px 0;
+        margin-bottom: 150px;
+    }
+    section.me ul.list ul.in li p {
+        float: none;
+    }
+
+    section.me ul.list ul.in li em {
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    section.me ul.list ul.in li p::before {
+        left: -30px;
+        top: 0px;
+    }
+
+    section.me ul.list > li h3 {
+        margin-bottom: 10px;
+    }
+
+    footer .inner .ft-logo {
+        width: 15%;
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+    footer .inner .ft-logo img {
+        width: 100%;
+    }
+    footer .inner .address {
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+    /* footer .inner ul.list {
+        margin-top: 50px;
+    } */
+    footer .inner ul.list {
+        float: left;
+        margin: 30px auto 0;
+    }
+
+
+}
+
+
+/* 태블릿 768px 이하 해상도 (아이패드 미니) */
+@media screen and (max-width: 768px){
+   
+    section.sns ul.sub-container li a .img-box{
+        height: 120px;
+    }
+    section.main .main-title h2 {
+        font-size: 25px;
+    }
+    header {
+        height: 70px;
+        line-height: 70px;
+    }
+    header .inner-header h1 .logo {
+        height: 0px;
+    }
+    section.main .main-title p {
+        font-size: 15px;
+    }
+    section.main .main-title .view {
+    font-size: 11px;
+    width: 100px;
+    padding: 4px 8px;
+}
+
+
+section .title h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+section .title p {
+    font-size: 15px;
+}
+
+
+section.about .sub-container li {
+    box-sizing: border-box;
+    float: none;
+    margin: 0 auto;
+    width: 90%;
+    height: 510px;
+}
+
+section.about ul li a .text h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+section.about ul li a .text p {
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+section.about ul li a .text {
+    padding: 15px;
+}
+section.about ul li a .text p.more::before {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    top: -3px;
+} /* ABOUT */
+
+section.innovation .img-box {
+    height: 300px;
+}
+
+
+section.innovation .img-box .inner .bottom {
+    padding: 20px 50px;
+}
+section.innovation .img-box .inner .bottom p {
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+section.innovation .img-box .inner .bottom a {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    padding: 8px 27px;
+}
+
+section.innovation .img-box .inner h3 {
+    font-size: 16px;
+    padding: 15px 30px;
+}
+
+section.sns ul.sub-container li{
+    box-sizing: border-box;
+    float: none;
+    margin: 0 auto;
+    width: 90%;
+}
+
+section.sns ul.sub-container li a .img-box{
+    height: 440px;
+}
+section.sns ul.sub-container li a .bottom {
+    padding: 15px 0 40px 15px;
+    box-sizing: border-box;
+}
+section.sns ul.sub-container li:last-child{
+    margin: 0 auto;
+}
+
+footer .inner ul.list {
+    margin-left: 0 auto;
+}
+footer .inner ul.list li{
+    /* 메뉴들을 좌측부터 순서대로 정렬 */
+    float: left;
+    margin-left: 50px;
+
+}
+
+footer .inner ul.list a{
+    font-size: 11px;
+}
+
+
+
+
+
+}
+/* ahqkdlf 414px 이하 해상도 (아이폰 6/7/8 plus) */
+@media (max-width: 414px) {
+    section.main {
+        background: url(./img/vis_4.jpg) no-repeat center / cover fixed;
+        height: 70vh;
+        position: relative;
+    }
+    .fa-bars:before {
+        width: 0.4em;
+    }
+    section.main .main-title h2 {
+        font-size: 24px;
+        width: 280px;
+        line-height: 1.2;
+    }
+    
+    section.main .main-title .view {
+        font-size: 13px;
+        width: 140px;
+        padding: 5px 5px;
+    }
+
+    section.main .main-title p{
+        font-size: 13px;
+        margin: 20px 0 40px;
+    }   
+
+
+    section .title h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    section .title p {
+        font-size: 13px;
+    }
+
+    section.about ul li a .text p {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+    section.about .sub-container li .img-box {
+        overflow: hidden;
+        margin-top: 50px;
+    }
+
+    section.innovation .img-box {
+        height: 250px;
+    }
+    section.about .sub-container li {
+        box-sizing: border-box;
+        float: none;
+        margin: 0 auto;
+        width: 90%;
+        height: 340px;
+    }
+    section.about ul li a .text p {
+        line-height: 1.3;
+    }
+    section.about .sub-container {
+        padding-bottom: 50px;
+    }
+
+    section.innovation .img-box .inner {
+        width: 85%;
+    }
+
+
+    section.innovation .img-box .inner h3 {
+        font-size: 13px;
+    }
+    section.innovation .img-box .inner .bottom p {
+        font-size: 12px;
+    }
+    section.innovation .img-box .inner .bottom a {
+        font-size: 12px;
+        text-align: center;
+    }
+    section.innovation .img-box .inner .bottom {
+        padding: 20px 35px;
+    }
+
+    section.me {
+    background: url(./img/me.jpg) no-repeat center / cover;
+    padding: 50px 0;
+    margin-bottom: 120px;
+}
+section.me ul.list > li {
+    padding: 30px 40px;
+    /* background-color: #555; */
+}
+footer .inner .ft-logo {
+    float: none;
+    width: 60%;
+    margin: 0 auto;
+}
+footer .inner .address {
+    float: none;
+    text-align: center;
+    margin-top: 20px;
+}
+footer .inner ul.list {
+    display: none;
+}
+
+br.mo{
+    display: block;
+}
+    
+}
+
+
 
 
 
